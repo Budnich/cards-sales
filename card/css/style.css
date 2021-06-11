@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+/* 
+#cards, .card, .pic, .title, .price, .price div, .stars {border: 1px solid blue;} */
+
+body {
+    font-family: 'Oswald', sans-serif;
+
+
+}
+
+
+#cards {
+
+    width: 1000px;
+    height: 800px;
+    margin: 0 auto;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+width: 300px;
+height: 675px;
+/* border: 1px solid blue;  */
+
+display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.pic {
+    width: 280px;
+    height: 420px;
+margin-top: 10px;
+
+}
+
+.title {
+    width: 280px;
+    height: 75px;
+ font-size: 30px;
+ color: #616161;
+     line-height: 1; 
+     display: flex;
+     flex-wrap: wrap;
+     align-content: center;
+     justify-content: center;
+}
+
+.price {
+    width: 280px;
+    height: 45px;
+    display: flex;
+ justify-content: space-around;
+
+
+}
+
+.price div {
+
+display:flex;
+align-items: center;
+
+}
+
+.price > div:nth-child(1) {
+font-size: 30px;
+color: #242323;
+   }
+
+.price > div:nth-child(2) {
+    font-size: 19px;
+    color: #868282;
+text-decoration: line-through;
+       }
+
+.stars {
+    width: 280px;
+    height: 40px;
+display :flex;
+justify-content: center;
+align-items:center;
+       }
+
+.material-icons {
+color: #ffcf00;
+font-size: 32px;
+
+}
+
+.buy {
+width: 280px;
+height:75px ;
+align-items:center;
+justify-content: center;
+display: flex;
+}
+
+.pic > :nth-child(2) {
+    position: relative;
+    top: -90px;
+    left: 10px;
+    /* visibility: hidden;  1 способ */
+    /* display: none;  2 способ */
+    opacity: 0;   
+} 
+
+.pic > :nth-child(3) {
+    position: relative;
+    top: -300px;
+    right: 20px;
+}
+

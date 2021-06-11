@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+    
+    <div id="cards">
+
+<!-- 
+        <div class="card">
+    <div class="pic">
+        <img src="images/card[j].jpg" alt="">
+        <img src="images/sales.png" alt="">
+        <img src="images/type.png" alt="">
+    </div>
+
+    
+    <div class="title">
+        <div>Тайная жизнь</div>
+        <div>домашних животных 2</div>
+    </div>
+
+    <div class="price">
+        <div>14.00 руб.</div>
+        <div>17.00 руб.</div>
+    </div>
+
+    <div class="stars">
+        <span class="material-icons">star </span>
+        <span class="material-icons">star </span>
+        <span class="material-icons">star </span>
+        <span class="material-icons">star_half </span>
+        <span class="material-icons">star_border </span>
+    </div>
+
+<div class="buy">
+    <img src="images/Ресурс 3-80.jpg" alt="">
+</div> -->
+
+</div>
+    
+<script>
+
+card = [ 
+    {
+cardTitle1: "Тайная жизнь",
+cardTitle2: "домашних животных 2",
+cost: 17,
+currency: "руб.",
+file: "card.jpg",
+type: "type.png",
+salesFile: "sales.png",
+sales: true,  // можно написать false и останется одна цена
+rating: 4,
+button: "buy.jpg"
+},
+{
+cardTitle1: "История игрушек 4",
+cardTitle2: "Приключения Вилкинса",
+cost: 16,
+currency: "руб.",
+file: "toy4.jpg",
+type: "type.png",
+salesFile: "sales.png",
+sales: true,  // можно написать false и останется одна цена
+rating: 4,
+button: "buy.jpg"
+},
+{
+cardTitle1: "Фердинанд",
+cardTitle2: "Побег из коровника",
+cost: 18,
+currency: "руб.",
+file: "ferd.jpg",
+type: "type.png",
+salesFile: "sales.png",
+sales: true,  // можно написать false и останется одна цена
+rating: 4,
+button: "buy.jpg"
+},
+
+];
+
+let s = '';
+// alert('hello');
+for(j=0; j<card.length; j++) {
+
+// полная стоимость
+let fullCost = `${card[j].cost},00 ${card[j].currency}`;
+
+// alert(fullCost);
+
+// Стоимость акции - 15%
+
+let cost1 = card[j].cost * .85;
+// alert(cost1);
+ let saleCost =  `${Math.floor(cost1)},00 ${card[j].currency}`;
+// alert(saleCost);
+
+// расчет рейтинга
+let myStars = " ";
+for (i=1;i<=card[j].rating;i++) {
+    myStars += '<span class="material-icons">star</span>';}
+    myStars += '<span class="material-icons">star_border </span>';
+
+let doSales = "";
+if (card[j].sales) 
+     doSales = `<div>${saleCost}</div>`;
+
+
+
+s += `
+<div class="card">
+    <div class="pic">
+        <img src="images/${card[j].file}" alt="">
+        <img src="images/${card[j].salesFile}" alt="">
+        <img src="images/${card[j].type}" alt="">
+    </div>
+
+    
+    <div class="title">
+        <div>${card[j].cardTitle1}</div>
+        <div>${card[j].cardTitle2}</div>
+    </div>
+
+    <div class="price">
+         ${doSales}
+        <div>${fullCost}</div>
+    </div>
+
+    <div class="stars">
+        ${myStars}
+    </div>
+
+<div class="buy">
+    <img src="images/${card[j].button}" alt="">
+</div>
+</div>
+`;
+
+} // цикл for
+cards.innerHTML = s;    
+
+for (k=0;k<card.lenght;k++) {
+    
+    if(card[k].sales)
+
+
+
+// if(card[j].sales)  document.images[1].style.visibility = 'visible';  1 способ
+// if(card[j].sales)  document.images[1].style.display = 'inline';  2 способ
+if(card[j].sales)  document.images[1].style.opacity = '1' ;
+}
+
+</script>
+
+    
+
+
+
+</body>
+</html>
